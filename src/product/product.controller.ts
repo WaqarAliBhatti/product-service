@@ -8,7 +8,7 @@ import { MessagePattern } from '@nestjs/microservices';
 export class ProductController {
   constructor(private readonly productService: ProductService) { }
 
-  @Post()
+  @MessagePattern({ cmd: 'add_product' })
   create(@Body() createProductDto: CreateProductDto) {
     return this.productService.create(createProductDto);
   }

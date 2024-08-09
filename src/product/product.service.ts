@@ -6,7 +6,7 @@ import { UpdateProductDto } from './dto/update-product.dto';
 export class ProductService {
   private products = [{ id: 1, name: 'Product A' }];
   create(createProductDto: CreateProductDto) {
-    return 'This action adds a new product';
+    return createProductDto;
   }
 
   findAll() {
